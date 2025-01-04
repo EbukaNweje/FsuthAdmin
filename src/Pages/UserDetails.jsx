@@ -218,11 +218,11 @@ const UserDetails = () => {
 
     const AddProfit = () => {
         const url = `https://fsuth-back-end.vercel.app/api/add-profit/${id}`;
-        const profitAmount = creditDebitValue
-        console.log("This is it",profitAmount)
+        const amount = creditDebitValue
+        console.log("This is it",amount)
         const toastLoadingId = toast.loading("Please wait...");
         axios
-            .post(url, {profitAmount})
+            .post(url, {amount})
             .then((response) => {
                 toast.dismiss(toastLoadingId);
                 console.log("Profile",response);
