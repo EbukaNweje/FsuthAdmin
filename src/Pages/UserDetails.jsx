@@ -218,11 +218,11 @@ const UserDetails = () => {
 
     const AddProfit = () => {
         const url = `https://fsuth-back-end.vercel.app/api/add-profit/${id}`;
-        const amount = creditDebitValue
-        console.log("This is it",amount)
+        const profitAmount = creditDebitValue
+        console.log("This is it",profitAmount)
         const toastLoadingId = toast.loading("Please wait...");
         axios
-            .post(url, {amount})
+            .post(url, {profitAmount})
             .then((response) => {
                 toast.dismiss(toastLoadingId);
                 console.log("Profile",response);
@@ -564,7 +564,7 @@ const UserDetails = () => {
             </Modal>
             <Modal
                 open={creditDebit}
-                onOk={TextClick}
+                onOk={handleCreditDebit}
                 onCancel={() => setCreditDebit(false)}
                 cancelButtonProps={{hidden: true}}
                 okButtonProps={{
