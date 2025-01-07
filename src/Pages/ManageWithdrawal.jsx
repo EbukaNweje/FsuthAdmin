@@ -8,7 +8,7 @@ const ManageWithdrawal = () => {
   const [userData, setUserData] = useState([]);
 
   const sendSignUpEmail = async (id) => {
-    const urlemail = `https://fsuth-back-end.vercel.app/api/confirmwithdrawalemailsend/${id}`
+    const urlemail = `https://fsuth-back-ends.vercel.app/api/confirmwithdrawalemailsend/${id}`
     axios.post(urlemail)
        .then(response => {
          console.log(response);
@@ -20,7 +20,7 @@ const ManageWithdrawal = () => {
    };
 
     const acceptDeposit = (withdrawId) => {
-        const url = `https://fsuth-back-end.vercel.app/api/confirm-withdrawal/${withdrawId}`;
+        const url = `https://fsuth-back-ends.vercel.app/api/confirm-withdrawal/${withdrawId}`;
         axios.post(url)
             .then((response) => {
                 console.log(response.data.user._id)
@@ -34,7 +34,7 @@ const ManageWithdrawal = () => {
     };
 
     const getallDeposit = () => {
-        const url = "https://fsuth-back-end.vercel.app/api/allwithdrawal";
+        const url = "https://fsuth-back-ends.vercel.app/api/allwithdrawal";
         axios.get(url)
             .then((response) => {
                 console.log(response.data);
